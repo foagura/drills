@@ -1,10 +1,12 @@
 def get_days(year, month)
   days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-  if (year % 4) && (year % 100 && year % 400) && (month == 2)
-    days[month] + 1
+  if (year % 4 == 0 && year % 100 == 0) && !(year % 400 == 0)
+    days[month - 1]
+  elsif year % 4 == 0 && month == 2
+    days[month - 1] + 1
   else
-    days[month]
+    days[month - 1]
   end
 end
 
