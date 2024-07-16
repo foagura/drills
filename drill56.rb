@@ -10,7 +10,13 @@ def register_data(students)
   puts "体重を入力してください"
   student[:weight] = gets.to_f
 
+  student[:bmi] = calculate_bmi(student).round(2)
+
   students << student
+end
+
+def calculate_bmi(student)
+  student[:weight] / (student[:stature] * student[:stature])
 end
 
 def show_data(students)
@@ -28,6 +34,7 @@ def student_data(student)
   puts "年齢:#{student[:age]}"
   puts "身長:#{student[:stature]}"
   puts "体重:#{student[:weight]}"
+  puts "BMI:#{student[:bmi]}"
 end
 
 students = []
