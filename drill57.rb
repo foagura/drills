@@ -3,6 +3,7 @@ def register_data
   puts "パンチ力を入力してください(0 ~ 100)"
   puts "キック力を入力してください(0 ~ 100)"
   puts "ジャンプ力を入力してください(0 ~ 100)"
+  
 end
 
 def show_data_list
