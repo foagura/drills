@@ -1,6 +1,13 @@
 def get_week(year, month, day)
   wdays = ["日", "月", "火", "水", "木", "金", "土"]
-  if (year % 4 == 0) && (year % 100 !== 0 && year % 400 == 0)
+  time = Time.new(year,month,day)
+  
+  if day > time.mday
+    puts "入力された日は存在しません"
+    exit
+  else
+    wdays[time.wday]
+  end
 end
 
 puts "年を入力してください："
